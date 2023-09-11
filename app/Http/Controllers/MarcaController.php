@@ -17,8 +17,9 @@ class MarcaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+
         $marcaRepository = new MarcaRepository($this->marca);
 
         if($request->has('atributos_modelos')) {
@@ -38,6 +39,7 @@ class MarcaController extends Controller
 
         return response()->json($marcaRepository->getResultado(), 200);
     }
+
     /**
      * Store a newly created resource in storage.
      *
